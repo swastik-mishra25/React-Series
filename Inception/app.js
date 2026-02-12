@@ -10,7 +10,7 @@
  * 
  */
 
-const parent = React.createElement(
+const parent = React.createElement( //parent is an object
     "div",
     { id: "parent" },
     React.createElement(
@@ -19,19 +19,22 @@ const parent = React.createElement(
         React.createElement("h1", {}, "I'm an h1 tag")
     )
 );
-
-
-
-
-
-
-
-
-
-
-
-
-const heading = React.createElement("h1", { id: "heading", xyz: "abc" }, "Hello World from React!");
-console.log(heading); // It will return an object
+console.log(parent);
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(heading);
+root.render(parent);
+
+
+
+
+
+
+
+
+
+
+
+
+// const heading = React.createElement("h1", { id: "heading", xyz: "abc" }, "Hello World from React!");
+// console.log(heading); // It will return an object
+// const root = ReactDOM.createRoot(document.getElementById("root"));
+// root.render(heading);
