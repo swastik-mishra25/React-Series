@@ -81,7 +81,7 @@ const parentone = React.createElement("div", { id: "parent"}, [
 console.log(parentone);
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(parentone);
-// Due to above complexity...
+// Due to above complexity...JSX file is created
 
 
 
