@@ -1,0 +1,21 @@
+{
+  "name": "igniting-our-app",
+  "version": "1.0.0",
+  "description": "This is React Series by Swastik Mishra",
+  "keywords": [],
+  "homepage": "https://github.com/swastik-mishra25/React-Series#readme",
+  "bugs": {
+    "url": "https://github.com/swastik-mishra25/React-Series/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/swastik-mishra25/React-Series.git"
+  },
+  "license": "ISC",
+  "author": "Swastik Mishra",
+  "type": "commonjs",
+  "main": "app.js",
+  "scripts": {
+    "test": "jest"
+  }
+}
