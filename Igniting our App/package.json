@@ -14,7 +14,6 @@
   "license": "ISC",
   "author": "Swastik Mishra",
   "type": "commonjs",
-  "main": "app.js",
   "scripts": {
     "test": "jest"
   },
