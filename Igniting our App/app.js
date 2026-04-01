@@ -34,11 +34,11 @@
 console.log(parent); //Object
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(parent); */
-
 // Sibling Structure
 
 // If you want to make the sibling structure from the nested structure....make the 3rd arguement in the array form...
-
+import React from "react";
+import ReactDOM from "react-dom/client";
 const parent = React.createElement( //parent is an object, react element
     "div",
     { id: "parent" },
@@ -68,12 +68,12 @@ const parent = React.createElement( //parent is an object, react element
 
 */
 
-const parentone = React.createElement("div", { id: "parent"}, [
-    React.createElement("div", { id: "child"}, [
-        React.createElement("h1", {}, "I'm an h1 tag"),
-        React.createElement("h2", {}, "I'm an h2 tag"),
+const parentone = React.createElement("div", { id: "parent" }, [
+    React.createElement("div", { id: "child" }, [
+        React.createElement("h1", {}, "This is Namaste React🚀"),
+        React.createElement("h2", {}, "By Swastik Mishra"),
     ]),
-    React.createElement("div", { id: "child2"}, [
+    React.createElement("div", { id: "child2" }, [
         React.createElement("h1", {}, "I'm an h1 tag"),
         React.createElement("h2", {}, "I'm an h2 tag"),
     ]),
