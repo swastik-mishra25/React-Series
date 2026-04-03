@@ -11,3 +11,6 @@
 - File Minification
 - Bundling of core features !!
 - Compressing of files
+- Consistent Hashing (Read)
+- Code Splitting
+- Differential Bundling - to support older browsers
