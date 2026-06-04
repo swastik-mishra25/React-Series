@@ -14,3 +14,8 @@
 - Consistent Hashing (Read)
 - Code Splitting
 - Differential Bundling - to support older browsers
+- Diagnostic
+- Error Handling
+- HTTPs
+- Tree Shaking algorithm - remove unused code  
+- Different dev and production bundles
