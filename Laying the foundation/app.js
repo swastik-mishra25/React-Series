@@ -98,3 +98,4 @@ root.render(parentone);
 // console.log(heading); // It will return an object
 // const root = ReactDOM.createRoot(document.getElementById("root"));
 // root.render(heading);
+
