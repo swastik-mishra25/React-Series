@@ -15,6 +15,8 @@ const heading = React.createElement(
 
 // JSX - HTML-like or XML-like syntax
 
+// JSX (transpiled before it reaches the JS) - PARCEL - Babel
+
 // Creating H1 tag using jsx
 
 // React Element made up of jsx..
