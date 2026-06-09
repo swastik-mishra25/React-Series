@@ -19,7 +19,9 @@ const heading = React.createElement(
 
 // React Element made up of jsx..
 
-const jsxHeading = <h1>Namaste React using JSX</h1>
+//JSX => Babel transpiles it to React.createElement => ReactElement-JS Object => HTMLElement(render)
+
+const jsxHeading = <h1 className="head">Namaste React using JSX</h1>
 
 console.log(jsxHeading);
 
