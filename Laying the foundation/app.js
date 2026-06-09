@@ -29,3 +29,20 @@ console.log(jsxHeading);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(jsxHeading);
+
+// Part_04_Begins
+
+// React Element
+
+const heading = (
+<h1 className="head">
+    Namaste React using JSX
+    </h1>
+); 
+
+// React Component
+
+
+
+
+
