@@ -43,7 +43,7 @@ const heading = <h1 className="head">Namaste React using JSX</h1>;
 // React Functional Component :- It is just a javascript function
 
 const HeadingComponent = () => {
-  return <h1 className="heading"> Namaste React Functional Component </h1>;
+  return <h1 className="heading"> Namaste React Functional Component </h1>
 };
 
 const HeadingComponent2 = () => (
@@ -65,13 +65,15 @@ const HeadingComponent3 = () => (
 
 // Injection of one code into the another one
 
+// Component Compositions
+
 const Title = () => (
   <h1 className="head" tabIndex="5">
     Namaste React using JSX
   </h1>
 );
 
-// Component Compositions
+
 
 const Heading_Component = () => (
   <div id="container">
@@ -80,6 +82,18 @@ const Heading_Component = () => (
   </div>
 );
 
+// const root = ReactDOM.createRoot(document.getElementById("root"));
+
+// root.render(<Heading_Component />);
+
+// Writing the Component Using the Normal function Without the Arrow One
+
+const Footer = function (){
+    return (
+        <footer className="foot"> Created by Swastik Mishra</footer>
+    );
+};
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
-root.render(<Heading_Component />);
+root.render(<Footer />);
