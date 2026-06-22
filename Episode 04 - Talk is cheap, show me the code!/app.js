@@ -39,7 +39,9 @@ const Header = () => {
   );
 };
 
-const RestaurantCard = () => {
+// Normal Method :-
+
+/* const RestaurantCard = (props) => {
   return (
     <div className="res-card">
       <img
@@ -47,8 +49,28 @@ const RestaurantCard = () => {
         alt="res-logo"
         src="https://imgs.search.brave.com/hPPz5OiBp-RpsIsQGx1DP0qt5W9qygudBHmGwe3lceQ/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9wbWN5/ZWxsb3dwYWdlcy5j/b20vZGlyZ2FsbGVy/eWltZy90aHVtYm5h/aWwvc3IyXzU3MTEu/anBn"
       />
-      <h3>Sai Fast Food</h3>
-      <h4>Biryani, North Indian, Asian</h4>
+      <h3>{props.resName}</h3>
+      <h4>{props.cuisine}</h4>
+      <h4>4.4 stars</h4>
+      <h4>38 minutes</h4>
+    </div>
+  );
+}; */
+
+// Destructing on the fly:-
+
+const RestaurantCard = (props) => {
+  const { resName, cuisine } = props;
+
+  return (
+    <div className="res-card">
+      <img
+        className="res-logo"
+        alt="res-logo"
+        src="https://imgs.search.brave.com/hPPz5OiBp-RpsIsQGx1DP0qt5W9qygudBHmGwe3lceQ/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9wbWN5/ZWxsb3dwYWdlcy5j/b20vZGlyZ2FsbGVy/eWltZy90aHVtYm5h/aWwvc3IyXzU3MTEu/anBn"
+      />
+      <h3>{resName}</h3>
+      <h4>{cuisine}</h4>
       <h4>4.4 stars</h4>
       <h4>38 minutes</h4>
     </div>
@@ -60,13 +82,11 @@ const Body = () => {
     <div className="body">
       <div className="search">Search</div>
       <div className="res-container">
-        <RestaurantCard />
-        <RestaurantCard />
-        <RestaurantCard />
-        <RestaurantCard />
-        <RestaurantCard />
-        <RestaurantCard />
-        <RestaurantCard />
+        <RestaurantCard
+          resName="Sai Fast Food"
+          cuisine="Biryani, North Indian, Asian"
+        />
+        <RestaurantCard resName="KFC" cuisine="Burger, Fast Food" />
       </div>
     </div>
   );
