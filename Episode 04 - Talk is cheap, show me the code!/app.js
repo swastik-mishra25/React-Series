@@ -59,13 +59,33 @@ const Header = () => {
 
 // Destructing on the fly:-
 
+//1st type
+
 // const RestaurantCard = (props) => {
 //   const { resName, cuisine } = props;
+
+// Here I am using just an example of KFC
 
 const RestaurantCard = (props) => {
   const { resData } = props;
 
+  //This is the normal card
 
+  /* return (
+    <div className="res-card">
+      <img
+        className="res-logo"
+        alt="res-logo"
+        src="https://imgs.search.brave.com/hPPz5OiBp-RpsIsQGx1DP0qt5W9qygudBHmGwe3lceQ/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9wbWN5/ZWxsb3dwYWdlcy5j/b20vZGlyZ2FsbGVy/eWltZy90aHVtYm5h/aWwvc3IyXzU3MTEu/anBn"
+      />
+      <h3>{resName}</h3>
+      <h4>{cuisine}</h4>
+      <h4>4.4 stars</h4>
+      <h4>38 minutes</h4>
+    </div>
+  ); */
+
+  // Example of a KFC
 
   return (
     <div className="res-card">
@@ -97,6 +117,8 @@ const Body = () => {
   );
 };
 
+//Below one is the example of KFC
+
 const resObj = {
   type: "restaurant",
   data: {
@@ -108,21 +130,15 @@ const resObj = {
     area: "BTM Layout",
     totalRatingsString: "500+ ratings",
     cloudinaryImageId: "bdcd233971b7c81bf77e1fa4471280eb",
-    cuisines: [
-      "Burgers",
-      "Biryani",
-      "American",
-      "Snacks",
-      "Fast Food"
-    ],
+    cuisines: ["Burgers", "Biryani", "American", "Snacks", "Fast Food"],
     tags: [],
     costForTwo: 40000,
     costForTwoString: "₹400 FOR TWO",
     deliveryTime: 36,
     minDeliveryTime: 36,
     maxDeliveryTime: 36,
-    slaString: "36 MINS"
-  }
+    slaString: "36 MINS",
+  },
 };
 
 const AppLayout = () => {
