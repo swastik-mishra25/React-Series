@@ -169,7 +169,6 @@ const RestaurantCard = (props) => {
 // Now more than one resturant !!
 
 const resList = [
-
   {
     type: "restaurant",
     data: {
@@ -188,8 +187,8 @@ const resList = [
       deliveryTime: 30,
       minDeliveryTime: 25,
       maxDeliveryTime: 35,
-      slaString: "30 MINS"
-    }
+      slaString: "30 MINS",
+    },
   },
 
   {
@@ -210,8 +209,8 @@ const resList = [
       deliveryTime: 28,
       minDeliveryTime: 25,
       maxDeliveryTime: 30,
-      slaString: "28 MINS"
-    }
+      slaString: "28 MINS",
+    },
   },
 
   {
@@ -232,8 +231,8 @@ const resList = [
       deliveryTime: 32,
       minDeliveryTime: 30,
       maxDeliveryTime: 35,
-      slaString: "32 MINS"
-    }
+      slaString: "32 MINS",
+    },
   },
 
   {
@@ -254,8 +253,8 @@ const resList = [
       deliveryTime: 35,
       minDeliveryTime: 30,
       maxDeliveryTime: 40,
-      slaString: "35 MINS"
-    }
+      slaString: "35 MINS",
+    },
   },
 
   {
@@ -276,8 +275,8 @@ const resList = [
       deliveryTime: 27,
       minDeliveryTime: 25,
       maxDeliveryTime: 30,
-      slaString: "27 MINS"
-    }
+      slaString: "27 MINS",
+    },
   },
 
   {
@@ -298,8 +297,8 @@ const resList = [
       deliveryTime: 42,
       minDeliveryTime: 40,
       maxDeliveryTime: 45,
-      slaString: "42 MINS"
-    }
+      slaString: "42 MINS",
+    },
   },
 
   {
@@ -320,8 +319,8 @@ const resList = [
       deliveryTime: 38,
       minDeliveryTime: 35,
       maxDeliveryTime: 40,
-      slaString: "38 MINS"
-    }
+      slaString: "38 MINS",
+    },
   },
 
   {
@@ -342,8 +341,8 @@ const resList = [
       deliveryTime: 31,
       minDeliveryTime: 30,
       maxDeliveryTime: 35,
-      slaString: "31 MINS"
-    }
+      slaString: "31 MINS",
+    },
   },
 
   {
@@ -364,8 +363,8 @@ const resList = [
       deliveryTime: 40,
       minDeliveryTime: 35,
       maxDeliveryTime: 45,
-      slaString: "40 MINS"
-    }
+      slaString: "40 MINS",
+    },
   },
 
   {
@@ -386,8 +385,8 @@ const resList = [
       deliveryTime: 29,
       minDeliveryTime: 25,
       maxDeliveryTime: 30,
-      slaString: "29 MINS"
-    }
+      slaString: "29 MINS",
+    },
   },
 
   {
@@ -408,8 +407,8 @@ const resList = [
       deliveryTime: 33,
       minDeliveryTime: 30,
       maxDeliveryTime: 35,
-      slaString: "33 MINS"
-    }
+      slaString: "33 MINS",
+    },
   },
 
   {
@@ -430,8 +429,8 @@ const resList = [
       deliveryTime: 34,
       minDeliveryTime: 30,
       maxDeliveryTime: 35,
-      slaString: "34 MINS"
-    }
+      slaString: "34 MINS",
+    },
   },
 
   {
@@ -452,8 +451,8 @@ const resList = [
       deliveryTime: 26,
       minDeliveryTime: 25,
       maxDeliveryTime: 30,
-      slaString: "26 MINS"
-    }
+      slaString: "26 MINS",
+    },
   },
 
   {
@@ -474,9 +473,9 @@ const resList = [
       deliveryTime: 45,
       minDeliveryTime: 40,
       maxDeliveryTime: 50,
-      slaString: "45 MINS"
-    }
-  }
+      slaString: "45 MINS",
+    },
+  },
 ];
 
 const Body = () => {
@@ -485,6 +484,7 @@ const Body = () => {
       <div className="search">Search</div>
       <div className="res-container">
         {/* <RestaurantCard
+
           resName="Sai Fast Food"
           cuisine="Biryani, North Indian, Asian"
         /> */}
@@ -492,7 +492,8 @@ const Body = () => {
         {/* FOR KFC ONCE
         <RestaurantCard resData={resList} /> */}
 
-        {/* FOR MANY REST  
+        {/* FOR MANY RESTAURANT
+
         <RestaurantCard resData={resList[0]} />
         <RestaurantCard resData={resList[1]} />
         <RestaurantCard resData={resList[2]} />
@@ -502,9 +503,14 @@ const Body = () => {
         <RestaurantCard resData={resList[6]} />
         <RestaurantCard resData={resList[7]} />
         <RestaurantCard resData={resList[8]} />
+
         */}
 
         {/* THE BEST PRACTICE  */}
+
+        {resList.map((restaurant) => (
+          <RestaurantCard key={restaurant.data.id} resData={restaurant} />
+        ))}
       </div>
     </div>
   );
