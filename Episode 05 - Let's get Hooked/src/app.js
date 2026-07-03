@@ -1,22 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-// Components my app can have !!
-/*
- * Header
- * - Logo
- * - Nav Items
- * Body
- * - Search
- * - RestaurantContainer
- *  - RestaurantCard
- *    - Img
- *    - Name of Res, Star Rating, cuisine, delivery time
- * Footer
- * - Copyright
- * - Links
- * - Address
- * - Contact
- */
+
+
 
 const Header = () => {
   return (
@@ -527,6 +512,7 @@ const AppLayout = () => {
 };
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
+
 root.render(<AppLayout />);
 
 // Completed
