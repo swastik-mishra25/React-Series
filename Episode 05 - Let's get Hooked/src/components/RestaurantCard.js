@@ -1,3 +1,5 @@
+import { CDN_URL } from "../utils/constants";
+
 // Normal Method :-
 
 /* const RestaurantCard = (props) => {
@@ -60,7 +62,7 @@ const RestaurantCard = (props) => {
 
   // Example of a KFC
 
-  return (
+  /* return (
     <div className="res-card">
       <img
         className="res-logo"
@@ -73,11 +75,11 @@ const RestaurantCard = (props) => {
       <h3>{resData.data.name}</h3>
       <h4>{resData.data.cuisines.join(", ")}</h4>
       <h4>4.5 stars</h4>
-      {/* <h4>{resData.data.costForTwo / 100}</h4> */}
+      {/* <h4>{resData.data.costForTwo / 100}</h4> }
       <h4>₹{resData.data.costForTwo / 100} FOR TWO</h4>
       <h4>{resData.data.deliveryTime} minutes</h4>
     </div>
-  );
+  ); */
 
   //Best Practices
 
@@ -86,10 +88,7 @@ const RestaurantCard = (props) => {
       <img
         className="res-logo"
         alt="res-logo"
-        src={
-          "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/" +
-          cloudinaryImageId
-        }
+        src={CDN_URL + cloudinaryImageId}
       />
       <h3>{name}</h3>
       <h4>{cuisines.join(", ")}</h4>
