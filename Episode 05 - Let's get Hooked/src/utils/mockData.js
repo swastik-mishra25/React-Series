@@ -44,6 +44,7 @@ const resList = [
       minDeliveryTime: 25,
       maxDeliveryTime: 35,
       slaString: "30 MINS",
+      avgRating: 4.4,
     },
   },
 
@@ -66,6 +67,7 @@ const resList = [
       minDeliveryTime: 25,
       maxDeliveryTime: 30,
       slaString: "28 MINS",
+      avgRating: 3.9,
     },
   },
 
@@ -88,6 +90,7 @@ const resList = [
       minDeliveryTime: 30,
       maxDeliveryTime: 35,
       slaString: "32 MINS",
+      avgRating: 3.7,
     },
   },
 
@@ -110,6 +113,7 @@ const resList = [
       minDeliveryTime: 30,
       maxDeliveryTime: 40,
       slaString: "35 MINS",
+      avgRating: 4.5,
     },
   },
 
@@ -132,6 +136,7 @@ const resList = [
       minDeliveryTime: 25,
       maxDeliveryTime: 30,
       slaString: "27 MINS",
+      avgRating: 3.8,
     },
   },
 
@@ -154,6 +159,7 @@ const resList = [
       minDeliveryTime: 40,
       maxDeliveryTime: 45,
       slaString: "42 MINS",
+      avgRating: 4.6,
     },
   },
 
@@ -176,6 +182,7 @@ const resList = [
       minDeliveryTime: 35,
       maxDeliveryTime: 40,
       slaString: "38 MINS",
+      avgRating: 4.8,
     },
   },
 
@@ -198,6 +205,7 @@ const resList = [
       minDeliveryTime: 30,
       maxDeliveryTime: 35,
       slaString: "31 MINS",
+      avgRating: 3.6,
     },
   },
 
@@ -220,6 +228,7 @@ const resList = [
       minDeliveryTime: 35,
       maxDeliveryTime: 45,
       slaString: "40 MINS",
+      avgRating: 4.3,
     },
   },
 
@@ -242,6 +251,7 @@ const resList = [
       minDeliveryTime: 25,
       maxDeliveryTime: 30,
       slaString: "29 MINS",
+      avgRating: 3.9,
     },
   },
 
@@ -264,6 +274,7 @@ const resList = [
       minDeliveryTime: 30,
       maxDeliveryTime: 35,
       slaString: "33 MINS",
+      avgRating: 4.1,
     },
   },
 
@@ -286,6 +297,7 @@ const resList = [
       minDeliveryTime: 30,
       maxDeliveryTime: 35,
       slaString: "34 MINS",
+      avgRating: 3.5,
     },
   },
 
@@ -308,6 +320,7 @@ const resList = [
       minDeliveryTime: 25,
       maxDeliveryTime: 30,
       slaString: "26 MINS",
+      avgRating: 4.7,
     },
   },
 
@@ -330,6 +343,7 @@ const resList = [
       minDeliveryTime: 40,
       maxDeliveryTime: 50,
       slaString: "45 MINS",
+      avgRating: 4.2,
     },
   },
 ];

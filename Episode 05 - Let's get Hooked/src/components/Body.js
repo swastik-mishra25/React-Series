@@ -5,18 +5,26 @@ const Body = () => {
   return (
     <div className="body">
       <div className="search">Search</div>
+      <div className="filter">
+        <button
+          className="filter-btn"
+          onClick={() => {
+            console.log("Button Clicked");
+          }}
+        >
+          Top Rated Restaurants
+        </button>
+      </div>
       <div className="res-container">
         {/* <RestaurantCard
-
-          resName="Sai Fast Food"
+         resName="Sai Fast Food"
           cuisine="Biryani, North Indian, Asian"
         /> */}
         {/* <RestaurantCard resName="KFC" cuisine="Burger, Fast Food" /> */}
+
         {/* FOR KFC ONCE
         <RestaurantCard resData={resList} /> */}
-
         {/* FOR MANY RESTAURANT
-
         <RestaurantCard resData={resList[0]} />
         <RestaurantCard resData={resList[1]} />
         <RestaurantCard resData={resList[2]} />
@@ -26,7 +34,6 @@ const Body = () => {
         <RestaurantCard resData={resList[6]} />
         <RestaurantCard resData={resList[7]} />
         <RestaurantCard resData={resList[8]} />
-
         */}
 
         {/* THE BEST PRACTICE  */}
