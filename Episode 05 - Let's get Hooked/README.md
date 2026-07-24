@@ -21,6 +21,7 @@
 - Different dev and production bundles
 
 # Food Delivery App
+
 // Components my app can have !!
 /*
  * Header
@@ -52,3 +53,10 @@ import Component from "path";
 
 export const Component;
 import {Component} from "path";
+
+
+# React Hooks
+- They are normal javascript utility functions...written by facebook developers.
+- There are two important hooks.
+- useState() - Superpowerful State Variables in react.
+- useEffect()

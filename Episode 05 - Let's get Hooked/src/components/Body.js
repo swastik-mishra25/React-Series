@@ -1,42 +1,91 @@
 import RestaurantCard from "./RestaurantCard";
 import resList from "../utils/mockData";
+import { useState } from "react";
+import resList from "../utils/mockData";
 
 const Body = () => {
-  let listOfRestaurants = [
-    {
-      data: {
-        id: "334476",
-        name: "KFC",
-        cloudinaryImageId: "dominospizza123",
-        cuisines: ["Pizza", "Italian", "Fast Food"],
-        costForTwo: 60000,
-        deliveryTime: 30,
-        avgRating: 3.8,
-      },
-    },
-    {
-      data: {
-        id: "334477",
-        name: "Domino's Pizza",
-        cloudinaryImageId: "dominospizza123",
-        cuisines: ["Pizza", "Italian", "Fast Food"],
-        costForTwo: 60000,
-        deliveryTime: 30,
-        avgRating: 4.4,
-      },
-    },
-    {
-      data: {
-        id: "334478",
-        name: "MCD",
-        cloudinaryImageId: "dominospizza123",
-        cuisines: ["Pizza", "Italian", "Fast Food"],
-        costForTwo: 60000,
-        deliveryTime: 30,
-        avgRating: 4.1,
-      },
-    },
-  ];
+  // Use of Hooks
+
+  // Local State Variable - Super powerful variable
+
+  const [listOfRestaurants, setListOfRestaurant] = useState(
+  //   [
+  //   {
+  //     data: {
+  //       id: "334476",
+  //       name: "KFC",
+  //       cloudinaryImageId: "dominospizza123",
+  //       cuisines: ["Pizza", "Italian", "Fast Food"],
+  //       costForTwo: 60000,
+  //       deliveryTime: 30,
+  //       avgRating: 3.8,
+  //     },
+  //   },
+  //   {
+  //     data: {
+  //       id: "334477",
+  //       name: "Domino's Pizza",
+  //       cloudinaryImageId: "dominospizza123",
+  //       cuisines: ["Pizza", "Italian", "Fast Food"],
+  //       costForTwo: 60000,
+  //       deliveryTime: 30,
+  //       avgRating: 4.4,
+  //     },
+  //   },
+  //   {
+  //     data: {
+  //       id: "334478",
+  //       name: "MCD",
+  //       cloudinaryImageId: "dominospizza123",
+  //       cuisines: ["Pizza", "Italian", "Fast Food"],
+  //       costForTwo: 60000,
+  //       deliveryTime: 30,
+  //       avgRating: 4.1,
+  //     },
+  //   },
+  // ]
+  resList
+);
+
+  // NORMAL JS VARIABLE
+  // let listOfRestaurants;
+
+  // Normal Js Variable
+  // let listOfRestaurants = [
+  //   {
+  //     data: {
+  //       id: "334476",
+  //       name: "KFC",
+  //       cloudinaryImageId: "dominospizza123",
+  //       cuisines: ["Pizza", "Italian", "Fast Food"],
+  //       costForTwo: 60000,
+  //       deliveryTime: 30,
+  //       avgRating: 3.8,
+  //     },
+  //   },
+  //   {
+  //     data: {
+  //       id: "334477",
+  //       name: "Domino's Pizza",
+  //       cloudinaryImageId: "dominospizza123",
+  //       cuisines: ["Pizza", "Italian", "Fast Food"],
+  //       costForTwo: 60000,
+  //       deliveryTime: 30,
+  //       avgRating: 4.4,
+  //     },
+  //   },
+  //   {
+  //     data: {
+  //       id: "334478",
+  //       name: "MCD",
+  //       cloudinaryImageId: "dominospizza123",
+  //       cuisines: ["Pizza", "Italian", "Fast Food"],
+  //       costForTwo: 60000,
+  //       deliveryTime: 30,
+  //       avgRating: 4.1,
+  //     },
+  //   },
+  // ];
 
   return (
     <div className="body">
@@ -45,12 +94,25 @@ const Body = () => {
         <button
           className="filter-btn"
           onClick={() => {
-            // console.log("Button Clicked");
-            // Filter logic here
-            listOfRestaurants = listOfRestaurants.filter(
+
+            // For the usestate hook
+
+            const filteredList = listOfRestaurants.filter(
               (res) => res.data.avgRating > 4,
             );
-            console.log(listOfRestaurants);
+            setListOfRestaurant(filteredList);
+
+            // For checking whether the onclick is working is not !!
+
+            // console.log("Button Clicked");
+
+            // Filter logic here for normal javascript
+
+            // listOfRestaurants = listOfRestaurants.filter(
+            //   (res) => res.data.avgRating > 4,
+            // );
+            // console.log(listOfRestaurants);
+
           }}
         >
           Top Rated Restaurants
@@ -80,8 +142,7 @@ const Body = () => {
         {/* THE BEST PRACTICE  */}
 
         {listOfRestaurants.map((restaurant) => (
-          <RestaurantCard key={restaurant.data.id} resData={restaurant} 
-        />
+          <RestaurantCard key={restaurant.data.id} resData={restaurant} />
         ))}
       </div>
     </div>
