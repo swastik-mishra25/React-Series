@@ -59,4 +59,4 @@ import {Component} from "path";
 - They are normal javascript utility functions...written by facebook developers.
 - There are two important hooks.
 - useState() - Superpowerful State Variables in react.
-- useEffect()
+- useEffect() - 
