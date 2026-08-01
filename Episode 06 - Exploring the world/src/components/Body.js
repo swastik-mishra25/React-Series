@@ -1,6 +1,6 @@
 import RestaurantCard from "./RestaurantCard";
 import resList from "../utils/mockData";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import resList from "../utils/mockData";
 
 const Body = () => {
@@ -9,43 +9,43 @@ const Body = () => {
   // Local State Variable - Super powerful variable
 
   const [listOfRestaurants, setListOfRestaurant] = useState(
-  //   [
-  //   {
-  //     data: {
-  //       id: "334476",
-  //       name: "KFC",
-  //       cloudinaryImageId: "dominospizza123",
-  //       cuisines: ["Pizza", "Italian", "Fast Food"],
-  //       costForTwo: 60000,
-  //       deliveryTime: 30,
-  //       avgRating: 3.8,
-  //     },
-  //   },
-  //   {
-  //     data: {
-  //       id: "334477",
-  //       name: "Domino's Pizza",
-  //       cloudinaryImageId: "dominospizza123",
-  //       cuisines: ["Pizza", "Italian", "Fast Food"],
-  //       costForTwo: 60000,
-  //       deliveryTime: 30,
-  //       avgRating: 4.4,
-  //     },
-  //   },
-  //   {
-  //     data: {
-  //       id: "334478",
-  //       name: "MCD",
-  //       cloudinaryImageId: "dominospizza123",
-  //       cuisines: ["Pizza", "Italian", "Fast Food"],
-  //       costForTwo: 60000,
-  //       deliveryTime: 30,
-  //       avgRating: 4.1,
-  //     },
-  //   },
-  // ]
-  resList
-);
+    //   [
+    //   {
+    //     data: {
+    //       id: "334476",
+    //       name: "KFC",
+    //       cloudinaryImageId: "dominospizza123",
+    //       cuisines: ["Pizza", "Italian", "Fast Food"],
+    //       costForTwo: 60000,
+    //       deliveryTime: 30,
+    //       avgRating: 3.8,
+    //     },
+    //   },
+    //   {
+    //     data: {
+    //       id: "334477",
+    //       name: "Domino's Pizza",
+    //       cloudinaryImageId: "dominospizza123",
+    //       cuisines: ["Pizza", "Italian", "Fast Food"],
+    //       costForTwo: 60000,
+    //       deliveryTime: 30,
+    //       avgRating: 4.4,
+    //     },
+    //   },
+    //   {
+    //     data: {
+    //       id: "334478",
+    //       name: "MCD",
+    //       cloudinaryImageId: "dominospizza123",
+    //       cuisines: ["Pizza", "Italian", "Fast Food"],
+    //       costForTwo: 60000,
+    //       deliveryTime: 30,
+    //       avgRating: 4.1,
+    //     },
+    //   },
+    // ]
+    resList,
+  );
 
   // NORMAL JS VARIABLE
   // let listOfRestaurants;
@@ -87,6 +87,20 @@ const Body = () => {
   //   },
   // ];
 
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  const fetchData = async () => {
+    const data = await fetch(
+      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9046136&lng=77.614948&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING",
+    );
+
+    const json = await data.json();
+
+    console.log(json);
+  };
+
   return (
     <div className="body">
       <div className="search">Search</div>
@@ -94,7 +108,6 @@ const Body = () => {
         <button
           className="filter-btn"
           onClick={() => {
-
             // For the usestate hook
 
             const filteredList = listOfRestaurants.filter(
@@ -112,7 +125,6 @@ const Body = () => {
             //   (res) => res.data.avgRating > 4,
             // );
             // console.log(listOfRestaurants);
-
           }}
         >
           Top Rated Restaurants
@@ -150,4 +162,3 @@ const Body = () => {
 };
 
 export default Body;
-
