@@ -99,6 +99,10 @@ const Body = () => {
     const json = await data.json();
 
     console.log(json);
+    // Not a good way to write the code...
+    // setListOfRestaurant(json.data.cards[2].data.data.cards);
+    // For that reason we use optional chaining..
+    setListOfRestaurant(json?.data?.cards[2]?.data?.data?.cards);
   };
 
   return (
