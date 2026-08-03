@@ -101,7 +101,7 @@ const Body = () => {
     console.log(json);
     // Not a good way to write the code...
     // setListOfRestaurant(json.data.cards[2].data.data.cards);
-    // For that reason we use optional chaining..
+    // For that reason we use optional chaining..This is how you fetch data and render this data
     // setListOfRestaurant(json?.data?.cards[2]?.data?.data?.cards);
   };
 
