@@ -2,50 +2,58 @@ import RestaurantCard from "./RestaurantCard";
 import resList from "../utils/mockData";
 import { useEffect, useState } from "react";
 import resList from "../utils/mockData";
+import Shimmer from "./Shimmer";
 
 const Body = () => {
-  // Use of Hooks
+  // According to the API....I have
+
+  const [restaurantList, setRestaurantList] = useState([]);
+  const [searchRestaurant, setSearchRestaurant] = useState("");
+  const [filteredRestaurants, setFilteredRestaurants] = useState([]);
+  const [restaurantName, setRestaurantName] = useState("");
+
+  // Use of Hooks (According to the tutorial)
 
   // Local State Variable - Super powerful variable
 
-  const [listOfRestaurants, setListOfRestaurant] = useState(
-    //   [
-    //   {
-    //     data: {
-    //       id: "334476",
-    //       name: "KFC",
-    //       cloudinaryImageId: "dominospizza123",
-    //       cuisines: ["Pizza", "Italian", "Fast Food"],
-    //       costForTwo: 60000,
-    //       deliveryTime: 30,
-    //       avgRating: 3.8,
-    //     },
-    //   },
-    //   {
-    //     data: {
-    //       id: "334477",
-    //       name: "Domino's Pizza",
-    //       cloudinaryImageId: "dominospizza123",
-    //       cuisines: ["Pizza", "Italian", "Fast Food"],
-    //       costForTwo: 60000,
-    //       deliveryTime: 30,
-    //       avgRating: 4.4,
-    //     },
-    //   },
-    //   {
-    //     data: {
-    //       id: "334478",
-    //       name: "MCD",
-    //       cloudinaryImageId: "dominospizza123",
-    //       cuisines: ["Pizza", "Italian", "Fast Food"],
-    //       costForTwo: 60000,
-    //       deliveryTime: 30,
-    //       avgRating: 4.1,
-    //     },
-    //   },
-    // ]
-    resList,
-  );
+  // const [listOfRestaurants, setListOfRestaurant] = useState(
+  //   [
+  //   {
+  //     data: {
+  //       id: "334476",
+  //       name: "KFC",
+  //       cloudinaryImageId: "dominospizza123",
+  //       cuisines: ["Pizza", "Italian", "Fast Food"],
+  //       costForTwo: 60000,
+  //       deliveryTime: 30,
+  //       avgRating: 3.8,
+  //     },
+  //   },
+  //   {
+  //     data: {
+  //       id: "334477",
+  //       name: "Domino's Pizza",
+  //       cloudinaryImageId: "dominospizza123",
+  //       cuisines: ["Pizza", "Italian", "Fast Food"],
+  //       costForTwo: 60000,
+  //       deliveryTime: 30,
+  //       avgRating: 4.4,
+  //     },
+  //   },
+  //   {
+  //     data: {
+  //       id: "334478",
+  //       name: "MCD",
+  //       cloudinaryImageId: "dominospizza123",
+  //       cuisines: ["Pizza", "Italian", "Fast Food"],
+  //       costForTwo: 60000,
+  //       deliveryTime: 30,
+  //       avgRating: 4.1,
+  //     },
+  //   },
+  // ]
+  // resList, // [] // If my listofrestaurant is empty
+  // );
 
   // NORMAL JS VARIABLE
   // let listOfRestaurants;
@@ -87,23 +95,50 @@ const Body = () => {
   //   },
   // ];
 
+  // According to the Tutorial
+
+  // useEffect(() => {
+  //   fetchData();
+  // }, []);
+
+  const fetchData = async () => {
+    try {
+      const data = await fetch(
+        "https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9046136&lng=77.614948&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING",
+      );
+
+      const json = await data.json();
+
+      // console.log(json); According to the tutorial
+
+      const restaurants =
+        eval(
+          "json?." +
+            "https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9046136&lng=77.614948&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING",
+        ) || [];
+
+      setRestaurantList(restaurants);
+      setFilteredRestaurants(restaurants);
+    } catch (error) {
+      console.error("Error fetching data:", error);
+    }
+  };
+
+  // But this is according to the API I have
+
   useEffect(() => {
     fetchData();
   }, []);
 
-  const fetchData = async () => {
-    const data = await fetch(
-      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9046136&lng=77.614948&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING",
-    );
+  // Not a good way to write the code...
+  // setListOfRestaurant(json.data.cards[2].data.data.cards);
+  // For that reason we use optional chaining..This is how you fetch data and render this data
+  // setListOfRestaurant(json?.data?.cards[2]?.data?.data?.cards);
 
-    const json = await data.json();
-
-    console.log(json);
-    // Not a good way to write the code...
-    // setListOfRestaurant(json.data.cards[2].data.data.cards);
-    // For that reason we use optional chaining..This is how you fetch data and render this data
-    // setListOfRestaurant(json?.data?.cards[2]?.data?.data?.cards);
-  };
+  // It is okay but not a good way !!
+  if (restaurantList.length === 0) {
+    return <Shimmer />;
+  }
 
   return (
     <div className="body">

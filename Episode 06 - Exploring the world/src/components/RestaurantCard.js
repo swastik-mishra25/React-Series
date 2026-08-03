@@ -41,8 +41,10 @@ const RestaurantCard = (props) => {
     avgRating,
     cuisines,
     costForTwo,
-    deliveryTime
-  } = resData?.data;
+    deliveryTime,
+  // } = resData? .data for tutorial
+  } = resData?.info
+
 
   //This is the normal card
 
