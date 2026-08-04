@@ -62,3 +62,6 @@ import {Component} from "path";
 - useEffect() -
 
 # Two approach how UI fetch the data from backend.
+- Both the approaches are written in the notebeook.
+
+# Shimmer UI is must for all the UI projects.
