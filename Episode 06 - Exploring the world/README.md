@@ -64,4 +64,4 @@ import {Component} from "path";
 # Two approach how UI fetch the data from backend.
 - Both the approaches are written in the notebeook.
 
-# Shimmer UI is must for all the UI projects. Every Project must have it..
+# Shimmer UI is must for all the UI projects. Every Project must have it...
