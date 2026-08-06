@@ -43,7 +43,7 @@ const RestaurantCard = (props) => {
     costForTwo,
     deliveryTime,
   // } = resData? .data for tutorial
-  } = resData?.info
+  } = resData?.data
 
 
   //This is the normal card
