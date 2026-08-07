@@ -98,35 +98,60 @@ const Body = () => {
 
     const json = await data.json();
 
-    console.log(json);
-    console.log(
-       json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants
-    );
+    // Tutorial and Hard-coded method
 
-    console.log(
-  json?.data?.cards[3]?.card?.card?.gridElements?.infoWithStyle?.restaurants?.length
-);
+    //     console.log(json);
+    //     console.log(
+    //        json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+    //     );
 
+    //     console.log(
+    //   json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants?.length
+    // );
 
-const restaurantCard = json?.data?.cards?.find(
-  (card) => card?.card?.card?.gridElements?.infoWithStyle?.restaurants
-);
+    // Chatgpt version of the console.log !! As it is making it dynamic !!
 
-console.log(restaurantCard);
+    // const restaurantCard = json?.data?.cards?.find(
+    //   (card) => card?.card?.card?.gridElements?.infoWithStyle?.restaurants
+    // );
 
-setListOfRestaurant(
-  restaurantCard?.card?.card?.gridElements?.infoWithStyle?.restaurants || []
-);
+    // console.log(restaurantCard);
+
+    // setListOfRestaurant(
+    //   restaurantCard?.card?.card?.gridElements?.infoWithStyle?.restaurants || []
+    // );
+
+    // const restaurantIndex = json?.data?.cards?.findIndex(
+    //   (card) =>
+    //     card?.card?.card?.gridElements?.infoWithStyle?.restaurants
+    // );
+
+    // console.log(restaurantIndex);
 
     // Not a good way to write the code...
     // setListOfRestaurant(json.data.cards[2].data.data.cards);
 
     // For that reason we use optional chaining.
     // This is how you fetch data and render this data.
-    setListOfRestaurant(
-      json?.data?.cards[3]?.card?.card?.gridElements?.infoWithStyle
-        ?.restaurants || []
+    // setListOfRestaurant(
+    //   json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
+    //     ?.restaurants || []
+    // );
+
+    // Dynamic suggestion by chatgpt..
+
+    const restaurantIndex = json?.data?.cards?.findIndex(
+      (card) => card?.card?.card?.gridElements?.infoWithStyle?.restaurants,
     );
+
+    const restaurantCard = json?.data?.cards[restaurantIndex];
+
+    const restaurants =
+      restaurantCard?.card?.card?.gridElements?.infoWithStyle?.restaurants ||
+      [];
+
+    setListOfRestaurant(restaurants);
+    console.log(restaurantIndex);
   };
 
   // It is okay but not a good way!!
