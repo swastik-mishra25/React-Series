@@ -155,9 +155,9 @@ const Body = () => {
   };
 
   // It is okay but not a good way!!
-  // if (listOfRestaurants.length === 0) {
-  //   return <Shimmer />;
-  // }
+  if (listOfRestaurants.length === 0) {
+    return <Shimmer />;
+  }
 
   return (
     <div className="body">
