@@ -155,11 +155,16 @@ const Body = () => {
   };
 
   // It is okay but not a good way!!
-  if (listOfRestaurants.length === 0) {
-    return <Shimmer />;
-  }
+  // Basic Method
 
-  return (
+  // if (listOfRestaurants.length === 0) {
+  //   return <Shimmer />;
+  // }
+
+  // Using single return for both
+  return listOfRestaurants.length === 0 ? (
+    <Shimmer />
+  ) : (
     <div className="body">
       <div className="search">Search</div>
 
