@@ -43,8 +43,8 @@ const Body = () => {
     //     },
     //   },
     // ]
-    // resList 
-    [] // If my listOfRestaurants is empty
+    // resList
+    [], // If my listOfRestaurants is empty
   );
 
   // NORMAL JS VARIABLE
@@ -93,25 +93,46 @@ const Body = () => {
 
   const fetchData = async () => {
     const data = await fetch(
-      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=22.2303877&lng=84.8629086&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
+      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=22.2303877&lng=84.8629086&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING",
     );
 
     const json = await data.json();
 
     console.log(json);
+    console.log(
+       json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+    );
+
+    console.log(
+  json?.data?.cards[3]?.card?.card?.gridElements?.infoWithStyle?.restaurants?.length
+);
+
+
+const restaurantCard = json?.data?.cards?.find(
+  (card) => card?.card?.card?.gridElements?.infoWithStyle?.restaurants
+);
+
+console.log(restaurantCard);
+
+setListOfRestaurant(
+  restaurantCard?.card?.card?.gridElements?.infoWithStyle?.restaurants || []
+);
 
     // Not a good way to write the code...
     // setListOfRestaurant(json.data.cards[2].data.data.cards);
 
     // For that reason we use optional chaining.
     // This is how you fetch data and render this data.
-    setListOfRestaurant(json?.data?.cards[2]?.data?.data?.cards);
+    setListOfRestaurant(
+      json?.data?.cards[3]?.card?.card?.gridElements?.infoWithStyle
+        ?.restaurants || []
+    );
   };
 
   // It is okay but not a good way!!
-  if (listOfRestaurants.length === 0) {
-    return <Shimmer />;
-  }
+  // if (listOfRestaurants.length === 0) {
+  //   return <Shimmer />;
+  // }
 
   return (
     <div className="body">
@@ -123,7 +144,7 @@ const Body = () => {
           onClick={() => {
             // For the useState hook
             const filteredList = listOfRestaurants.filter(
-              (res) => res.data.avgRating > 4
+              (res) => res.info.avgRating > 4,
             );
 
             setListOfRestaurant(filteredList);
@@ -172,10 +193,7 @@ const Body = () => {
         {/* THE BEST PRACTICE */}
 
         {listOfRestaurants.map((restaurant) => (
-          <RestaurantCard
-            key={restaurant.data.id}
-            resData={restaurant}
-          />
+          <RestaurantCard key={restaurant.info.id} resData={restaurant} />
         ))}
       </div>
     </div>
