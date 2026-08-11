@@ -46,6 +46,11 @@ const Body = () => {
     // resList
     [], // If my listOfRestaurants is empty
   );
+  const [filteredRestaurant, setFilteredRestaurant] = useState([]);
+
+  const [searchText, setSearchText] = useState("");
+
+  console.log("Body Rendered");
 
   // NORMAL JS VARIABLE
   // let listOfRestaurants;
@@ -134,8 +139,8 @@ const Body = () => {
     // For that reason we use optional chaining.
     // This is how you fetch data and render this data.
     // setListOfRestaurant(
-    //   json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
-    //     ?.restaurants || []
+    json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
+      ?.restaurants || [];
     // );
 
     // Dynamic suggestion by chatgpt..
@@ -144,14 +149,27 @@ const Body = () => {
       (card) => card?.card?.card?.gridElements?.infoWithStyle?.restaurants,
     );
 
+    
+
     const restaurantCard = json?.data?.cards[restaurantIndex];
 
     const restaurants =
       restaurantCard?.card?.card?.gridElements?.infoWithStyle?.restaurants ||
       [];
 
+      // console.log("Restaurants from API:", restaurants);
+
     setListOfRestaurant(restaurants);
     console.log(restaurantIndex);
+
+    setListOfRestaurant(
+      json?.data?.cards[restaurantIndex]?.card?.card?.gridElements?.infoWithStyle
+        ?.restaurants || [],
+    );
+    setFilteredRestaurant(
+      json?.data?.cards[restaurantIndex]?.card?.card?.gridElements?.infoWithStyle
+        ?.restaurants || [],
+    );
   };
 
   // It is okay but not a good way!!
@@ -166,9 +184,34 @@ const Body = () => {
     <Shimmer />
   ) : (
     <div className="body">
-      <div className="search">Search</div>
-
       <div className="filter">
+        <div className="search">
+          <input
+            type="text"
+            className="search-box"
+            value={searchText}
+            onChange={(e) => {
+              setSearchText(e.target.value);
+            }}
+          />
+          <button
+            onClick={() => {
+              // Filter the restraunt cards and update the UI
+              // searchText
+              console.log(searchText);
+
+              const filteredRestaurant = listOfRestaurants.filter((res) =>
+                res.info.name
+                  .toLowerCase()
+                  .includes(searchText.toLocaleLowerCase()),
+              );
+
+              setFilteredRestaurant(filteredRestaurant);
+            }}
+          >
+            Search
+          </button>
+        </div>
         <button
           className="filter-btn"
           onClick={() => {
@@ -222,7 +265,7 @@ const Body = () => {
 
         {/* THE BEST PRACTICE */}
 
-        {listOfRestaurants.map((restaurant) => (
+        {filteredRestaurant.map((restaurant) => (
           <RestaurantCard key={restaurant.info.id} resData={restaurant} />
         ))}
       </div>
