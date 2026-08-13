@@ -1,9 +1,8 @@
 import { LOGO_URL } from "../utils/constants";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export const Header = () => {
   // When used as a variable
-
   // let btnName = "Login";
 
   // When used as a state variable
@@ -12,6 +11,11 @@ export const Header = () => {
 
   // It is basically a proof to showcase that the react will re-render the whole header component
   console.log("Header render");
+
+  //If no dependency array => useEffect is called on every render
+  useEffect(() => {
+    console.log("useEffect called");
+  });
 
   return (
     <div className="header">
