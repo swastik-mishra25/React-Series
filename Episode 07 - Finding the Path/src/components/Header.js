@@ -26,6 +26,8 @@ export const Header = () => {
   }, []);
 
   // If there is dependency array is [btnNameReact] => useEffect is called everytime when btnNameReact is updated
+
+  
   useEffect(() => {
     console.log("useEffect called");
   }, [btnNameReact]);
