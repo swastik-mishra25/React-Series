@@ -50,7 +50,7 @@ const Body = () => {
 
   const [searchText, setSearchText] = useState("");
 
-  console.log("Body Rendered");
+  // console.log("Body Rendered");
 
   // NORMAL JS VARIABLE
   // let listOfRestaurants;
@@ -160,7 +160,7 @@ const Body = () => {
       // console.log("Restaurants from API:", restaurants);
 
     setListOfRestaurant(restaurants);
-    console.log(restaurantIndex);
+    // console.log(restaurantIndex); 
 
     setListOfRestaurant(
       json?.data?.cards[restaurantIndex]?.card?.card?.gridElements?.infoWithStyle

@@ -13,7 +13,7 @@ export const Header = () => {
 
   console.log("Header render");
 
-  //If no dependency array => useEffect is called on every render
+  // If no dependency array => useEffect is called on every component render
 
   // useEffect(() => {
   //   console.log("useEffect called");
@@ -23,7 +23,7 @@ export const Header = () => {
 
   useEffect(() => {
     console.log("useEffect called");
-  });
+  }, []);
 
   return (
     <div className="header">
