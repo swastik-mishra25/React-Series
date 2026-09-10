@@ -19,11 +19,16 @@ export const Header = () => {
   //   console.log("useEffect called");
   // });
 
-  //If there is a dependency array is empty = [] => useEffect is called on only initial render(just once) !!
+  // If there is a dependency array is empty = [] => useEffect is called on only initial render(just once) !!
 
   useEffect(() => {
     console.log("useEffect called");
   }, []);
+
+  // If there is dependency array is [btnNameReact] => useEffect is called everytime when btnNameReact is updated
+  useEffect(() => {
+    console.log("useEffect called");
+  }, [btnNameReact]);
 
   return (
     <div className="header">
