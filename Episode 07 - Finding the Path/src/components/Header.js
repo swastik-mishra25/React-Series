@@ -10,9 +10,17 @@ export const Header = () => {
   const [btnNameReact, setBtnNameReact] = useState("Login");
 
   // It is basically a proof to showcase that the react will re-render the whole header component
+
   console.log("Header render");
 
   //If no dependency array => useEffect is called on every render
+
+  // useEffect(() => {
+  //   console.log("useEffect called");
+  // });
+
+  //If there is a dependency array is empty = [] => useEffect is called on only initial render(just once) !!
+
   useEffect(() => {
     console.log("useEffect called");
   });
